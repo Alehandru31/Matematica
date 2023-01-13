@@ -32,4 +32,12 @@ public class Algebra {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Algebra{" +
+                "x=" + x +
+                ", y=" + y +
+                ", simbol='" + simbol + '\'' +
+                '}';
+    }
 }
