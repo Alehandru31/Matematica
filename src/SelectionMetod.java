@@ -20,46 +20,51 @@ public class SelectionMetod {
                 algebra.setX(nambar);
                 nambar = Integer.parseInt(scanner.nextLine());
                 algebra.setY(nambar);
-
-
-                simbol();
-                System.out.println(algebra.toString());
-
+               simbol();
+               break;
             } else if (tip_matem.equals(GEOMETRIE)) {
                 System.out.println("Sa selectat: " + tip_matem + "!\n" + "Introduceti variabila x, y");
             } else {
                 System.out.println("Nu sa selectat nimic sau sa selectat un cuvint incorect.");
                 System.out.println("Selectati Algebra sau Geometrie:");
-                // simbol();
                 tip_matem = scanner.nextLine();
             }
         }
     }
 
-    private void simbol() {
-        //Algebraoperatie = scanner.nextLine();
-        System.out.println(operatie);
+    protected void simbol() {
+        double results = 0;
         while (operatie.isEmpty()) {
             operatie = scanner.nextLine();
-
             switch (operatie) {
                 case "+":
                     algebra.setSimbol(operatie);
+                    results = algebra.getX() + algebra.getY();
+                    results=Math.round(results);
                     break;
                 case "-":
                     algebra.setSimbol(operatie);
+                    results = algebra.getX() - algebra.getY();
+                    results=Math.round(results);
                     break;
                 case "*":
                     algebra.setSimbol(operatie);
+                    results = algebra.getX() * algebra.getY();
+                    results=Math.round(results);
                     break;
                 case "/":
                     algebra.setSimbol(operatie);
-                    break;
+                    try {
+                       double x=algebra.getX();
+                        results = x /  algebra.getY();
+                    }catch (Exception e){
+                        System.out.println("Inpartirea la 0 este inposibela: "+e);
+                    }
+                   break;
                 default:
-                    System.out.println("Ati introdus o operatie gresita" + operatie + " !");
+                    System.out.println("Ati introdus o operatie gresita" + operatie + "!");
             }
-            System.out.println("Ati introdus o operatie" + operatie + " !");
-
         }
+        System.out.println("Rezultatul operatieie de "+operatie+ " este: "+results);
     }
 }

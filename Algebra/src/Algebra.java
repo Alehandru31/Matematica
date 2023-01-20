@@ -18,26 +18,12 @@ public class Algebra {
         this.y = y;
         System.out.println("Selectati una din operatia, +,-,*,/");
     }
-    public double getResult(){
-        double result=0;
-        if(!simbol.equals("+")){
-           result=x+y;
-        } else if (!simbol.equals("-")) {
-            result=x-y;
-        } else if (!simbol.equals("*")) {
-            result=x*y;
-        }else if (!simbol.equals("/")) {
-            result=x/y;
-        }
-        return result;
+
+    public int getX() {
+        return x;
     }
 
-    @Override
-    public String toString() {
-        return "Algebra{" +
-                "x=" + x +
-                ", y=" + y +
-                ", simbol='" + simbol + '\'' +
-                '}';
+    public int getY() {
+        return y;
     }
 }

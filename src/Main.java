@@ -7,8 +7,5 @@ public class Main {
 
         System.out.println("Selectati Algebra sau Geometrie:");
         selectionMetod.Compare();
-
-
-
     }
 }
