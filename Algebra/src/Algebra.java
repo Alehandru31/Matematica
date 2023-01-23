@@ -7,7 +7,11 @@ public class Algebra {
 
 
     public void setX(int x) {
-        this.x = x;
+        try {
+            this.x = x;
+        }catch (NumberFormatException e){
+            System.out.println("Sa introdus un alt caracter inafara de cifra: "+e);
+        }
     }
 
     public void setSimbol(String simbol) {

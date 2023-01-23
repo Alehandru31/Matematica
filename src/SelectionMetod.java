@@ -13,6 +13,7 @@ public class SelectionMetod {
 
     public void Compare() {
         tip_matem = scanner.nextLine();
+
         while (!(tip_matem.equals(ALGEBRA)) || !(tip_matem.equals(GEOMETRIE))) {
             if (tip_matem.equals(ALGEBRA)) {
                 System.out.println("Sa selectat: " + tip_matem + "!\n" + "Introduceti variabila x, y");
